@@ -1,0 +1,139 @@
+main: com.conventnunnery.mobbountyreloaded.MobBountyReloaded
+version: ${project.version}-${BUILD_NUMBER}
+author: ToppleTheNun
+name: MobBountyReloaded
+
+permissions:
+    mbr.user.collect:
+        description: Required for users to be able to collect rewards/fines.
+        default: op
+    mbr.user.command.check:
+        description: Allows user to check value of creatures.
+        default: op
+    mbr.user.finebypass:
+        description: Allows users to bypass fines.
+        default: false
+    mbr.user.*:
+        description: Gives all user permissions.
+        default: op
+        children:
+            mbr.user.collect: true
+            mbr.user.command.check: true
+    mbr.admin.command.load:
+        description: Allows user to reload configs.
+        default: op
+    mbr.admin.command.save:
+        description: Allows user to save configs.
+        default: op
+    mbr.admin.command.reward:
+        description: Allows user to change mob value.
+        default: op
+    mbr.admin.command.worldreward:
+        description: Allows user to change mob value per world.
+        default: op
+    mbr.admin.command.mbgm:
+        description: Allows user to change group multipliers.
+        default: op
+    mbr.admin.command.mbum:
+        description: Allows user to change user multipliers.
+        default: op
+    mbr.admin.command.mbem:
+        description: Allows user to change environment multipliers.
+        default: op
+    mbr.admin.command.mbtm:
+        description: Allows user to change time multipliers.
+        default: op
+    mbr.admin.command.mbg:
+        description: Allows user to change general settings.
+        default: op
+    mbr.admin.debug:
+        description: Allows user to receive debug messages.
+        default: op
+    mbr.admin.command.*:
+        description: Gives all user permissions.
+        default: op
+        children:
+            mbr.admin.command.load: true
+            mbr.admin.command.save: true
+            mbr.admin.command.reward: true
+            mbr.admin.command.worldreward: true
+            mbr.admin.command.mbgm: true
+            mbr.admin.command.mbum: true
+            mbr.admin.command.mbem: true
+            mbr.admin.command.mbtm: true
+            mbr.admin.command.mbg: true
+    mbr.admin.*:
+        description: Gives all user permissions.
+        default: op
+        children:
+            mbr.admin.command.load: true
+            mbr.admin.command.save: true
+            mbr.admin.command.reward: true
+            mbr.admin.command.worldreward: true
+            mbr.admin.command.mbgm: true
+            mbr.admin.command.mbum: true
+            mbr.admin.command.mbem: true
+            mbr.admin.command.mbtm: true
+            mbr.admin.command.mbg: true
+            mbr.admin.debug: true
+    mbr.*:
+        description: Gives all user permissions.
+        default: op
+        children:
+            mbr.user.collect: true
+            mbr.user.command.check: true
+            mbr.admin.command.load: true
+            mbr.admin.command.save: true
+            mbr.admin.command.reward: true
+            mbr.admin.command.worldreward: true
+            mbr.admin.command.mbgm: true
+            mbr.admin.command.mbum: true
+            mbr.admin.command.mbem: true
+            mbr.admin.command.mbtm: true
+            mbr.admin.command.mbg: true
+            mbr.admin.debug: true
+commands:
+    mobbountyload:
+        description: Allows user to reload the MBR configs.
+        aliases: [mbload,mbl,mobbountyl,mbountyload,mbountyl,mobbl,mobbload]
+        usage: /<command>
+    mobbountysave:
+        description: Allows user to reload the MBR configs.
+        aliases: [mbsave,mbs,mobbountys,mbountysave,mbountys,mobbs,mobbsave]
+        usage: /<command>
+    mobbountycheck:
+        description: Allows user to check the values for creatures.
+        aliases: [mbcheck,mbc,mobbountyc,mbountycheck,mbountyc,mobbc,mobbcheck]
+        usage: /<command>
+    mobbounty:
+        description: Allows user to see MobBountyReloaded information.
+        aliases: [mb, mbounty, mobb]
+        usage: /<command>
+    mobbountyreward:
+        description: Allows user to change values of creatures.
+        aliases: [mbreward, mbr, mobbountyr,mbountyreward,mbountyr,mobbr,mobbreward]
+        usage: /<command> <creature> <value>
+    mobbountyworldreward:
+        description: Allows user to change values of creatures per world.
+        aliases: [mbwreward, mbwr, mobbountywr, mbountywreward,mbountyworldreward,mbountywr,mobbwr,mobbwreward]
+        usage: /<command> <world> <creature> [amount]
+    mobbountygroupmulti:
+        description: Allows user to change a group multiplier.
+        aliases: [mbgmulti, mbgm, mobbountygm, mbountygmulti,mbountygroupmulti,mbountygm,mobbgm,mobbgmulti]
+        usage: /<command> <group> <amount>
+    mobbountyusermulti:
+        description: Allows user to change a user multiplier.
+        aliases: [mbumulti, mbum, mobbountyum, mbountyumulti,mbountyusermulti,mbountyum,mobbum,mobbumulti]
+        usage: /<command> <user> <amount>
+    mobbountyenvmulti:
+        description: Allows user to change an environment multiplier.
+        aliases: [mbemulti, mbem, mobbountyem, mbountyemulti,mbountyemulti,mbountyem,mobbem,mobbemulti]
+        usage: /<command> <environment> <amount>
+    mobbountytimemulti:
+        description: Allows user to change a time multiplier.
+        aliases: [mbtmulti, mbtm, mobbountytm, mbountytmulti,mbountytmulti,mbountytm,mobbem,mobbtmulti]
+        usage: /<command> <time> <amount>
+    mobbountygeneral:
+        description: Allows user to change values of creatures.
+        aliases: [mbgeneral, mbg, mobbountyg,mbountygeneral,mbountyg,mobbg,mobbgeneral]
+        usage: /<command> <creature> <value>
