@@ -1,0 +1,7 @@
+/dist
+/bin
+/.idea
+*.class
+/javadoc
+/site
+/target

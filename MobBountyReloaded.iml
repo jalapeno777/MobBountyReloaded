@@ -12,7 +12,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Maven: org.bukkit:bukkit:1.5.2-R0.2-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: com.conventnunnery:ConventLib:1.0.3" level="project" />
+    <orderEntry type="library" name="Maven: com.conventnunnery:ConventLib:1.0.5" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.8.1" level="project" />
     <orderEntry type="library" name="Maven: net.milkbowl.vault:Vault:1.2.25-SNAPSHOT" level="project" />
   </component>

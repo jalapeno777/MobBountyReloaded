@@ -11,7 +11,6 @@
 package com.conventnunnery.mobbountyreloaded.managers;
 
 import com.conventnunnery.mobbountyreloaded.MobBountyReloaded;
-import com.conventnunnery.mobbountyreloaded.utils.configuration.MobBountyReloadedConfFile;
 
 public class MobBountyLocale {
 	private final MobBountyReloaded _plugin;
@@ -21,26 +20,26 @@ public class MobBountyLocale {
 	}
 
 	/**
-	 * Gets a string from Locale.yml
+	 * Gets a string from locale.yml
 	 *
 	 * @param key Key to look for
 	 * @return String requested
 	 */
 	public String getString(String key) {
-		String locale = _plugin.getConfigManager().getProperty(
-				MobBountyReloadedConfFile.GENERAL, "locale");
+		String locale = _plugin.getConfigManager().getConfiguration(MobBountyConfigs.ConfigurationFile
+                .LOCALE).getString("locale");
 
 		if (locale != null)
 			locale = locale.toLowerCase();
 		else
 			locale = "en";
 
-		String value = _plugin.getConfigManager().getProperty(
-				MobBountyReloadedConfFile.LOCALE, locale + "." + key);
+		String value = _plugin.getConfigManager().getConfiguration(MobBountyConfigs.ConfigurationFile
+                .LOCALE).getString(locale + "." + key);
 
 		if (value == null)
-			value = _plugin.getConfigManager().getProperty(
-					MobBountyReloadedConfFile.LOCALE, "en." + key);
+			value = _plugin.getConfigManager().getConfiguration(MobBountyConfigs.ConfigurationFile
+                    .LOCALE).getString("en." + key);
 
 		if (value != null)
 			value = value.replace('&', '\u00A7').replace("\u00A7\u00A7", "&");

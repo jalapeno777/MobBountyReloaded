@@ -1,18 +1,25 @@
 /*
  * Copyright (c) 2013. ToppleTheNun
  *
- * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+ * documentation files (the "Software"), to deal in the Software without restriction,
+ * including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ * and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
  *
- * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+ * The above copyright notice and this permission notice shall be included in all copies or substantial portions of
+ * the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+ * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+ * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
 package com.conventnunnery.mobbountyreloaded.managers;
 
 import com.conventnunnery.mobbountyreloaded.MobBountyReloaded;
-import com.conventnunnery.mobbountyreloaded.utils.MobBountyUtils;
-import com.conventnunnery.mobbountyreloaded.utils.configuration.MobBountyReloadedConfFile;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 
@@ -197,69 +204,74 @@ public class MobBountySettings {
     }
 
     private void saveGeneralSettings() {
-        getPlugin().getConfigManager().setProperty(MobBountyReloadedConfFile.GENERAL, "locale", G_LOCALE);
-        getPlugin().getConfigManager().setProperty(MobBountyReloadedConfFile.GENERAL, "killCache.use", G_KILLCACHE_USE);
-        getPlugin().getConfigManager()
-                .setProperty(MobBountyReloadedConfFile.GENERAL, "killCache.timeLimt", G_KILLCACHE_TIME_LIMIT);
-        getPlugin().getConfigManager().setProperty(MobBountyReloadedConfFile.GENERAL, "debugMode", G_DEBUG);
-        getPlugin().getConfigManager()
-                .setProperty(MobBountyReloadedConfFile.GENERAL, "creativeEarning.allow", G_ALLOW_CREATIVE);
+        getPlugin().getConfigManager().getConfiguration(MobBountyConfigs.ConfigurationFile.GENERAL).set(
+                "locale",
+                G_LOCALE);
+        getPlugin().getConfigManager().getConfiguration(MobBountyConfigs.ConfigurationFile.GENERAL).set("killCache" +
+                ".use",
+                G_KILLCACHE_USE);
+        getPlugin().getConfigManager().getConfiguration(MobBountyConfigs.ConfigurationFile.GENERAL)
+                .set("killCache.timeLimt", G_KILLCACHE_TIME_LIMIT);
+        getPlugin().getConfigManager().getConfiguration(MobBountyConfigs.ConfigurationFile.GENERAL).set(
+                "debugMode", G_DEBUG);
+        getPlugin().getConfigManager().getConfiguration(MobBountyConfigs.ConfigurationFile.GENERAL)
+                .set("creativeEarning.allow", G_ALLOW_CREATIVE);
     }
 
     private void saveKillstreakSettings() {
         for (Map.Entry<String, Double> entry : KS_KILLBONUSES.entrySet()) {
-            getPlugin().getConfigManager()
-                    .setProperty(MobBountyReloadedConfFile.KILLSTREAK, "KillBonus." + entry.getKey(), entry.getValue());
+            getPlugin().getConfigManager().getConfiguration(MobBountyConfigs.ConfigurationFile.KILLSTREAK).set(
+                    "KillBonus." + entry.getKey(), entry.getValue());
         }
-        getPlugin().getConfigManager()
-                .setProperty(MobBountyReloadedConfFile.KILLSTREAK, "allowedCreatures", KS_ALLOWED_CREATURES);
+        getPlugin().getConfigManager().getConfiguration(MobBountyConfigs.ConfigurationFile.KILLSTREAK)
+                .set("allowedCreatures", KS_ALLOWED_CREATURES);
     }
 
     private void saveRewardSettings() {
         for (Map.Entry<String, Map<String, String>> entry : R_CREATURE_VALUES.entrySet()) {
             for (Map.Entry<String, String> entry1 : entry.getValue().entrySet()) {
-                getPlugin().getConfigManager()
-                        .setProperty(MobBountyReloadedConfFile.REWARDS, entry.getKey() + "." + entry1.getKey(),
-                                entry1.getValue());
+                getPlugin().getConfigManager().getConfiguration(MobBountyConfigs.ConfigurationFile.REWARDS).set(
+                        entry.getKey() + "." + entry1.getKey(),
+                        entry1.getValue());
             }
         }
     }
 
     private void saveLocaleSettings() {
         for (Map.Entry<String, String> entry : L_MESSAGES.entrySet()) {
-            getPlugin().getConfigManager()
-                    .setProperty(MobBountyReloadedConfFile.LOCALE, G_LOCALE + "." + entry.getKey(),
-                            entry.getValue().replace('\u00A7', '&'));
+            getPlugin().getConfigManager().getConfiguration(MobBountyConfigs.ConfigurationFile.LOCALE).set(
+                    G_LOCALE + "." + entry.getKey(),
+                    entry.getValue().replace('\u00A7', '&'));
         }
     }
 
     private void saveMultiplierSettings() {
-        getPlugin().getConfigManager()
-                .setProperty(MobBountyReloadedConfFile.MULTIPLIERS, "fortuneToolsMultiplier", M_FORTUNE_MULTIPLIER);
+        getPlugin().getConfigManager().getConfiguration(MobBountyConfigs.ConfigurationFile.MULTIPLIERS)
+                .set("fortuneToolsMultiplier", M_FORTUNE_MULTIPLIER);
         for (Map.Entry<String, Double> entry : M_BIOME_MULTIPLIER.entrySet()) {
-            getPlugin().getConfigManager()
-                    .setProperty(MobBountyReloadedConfFile.MULTIPLIERS, "Biome." + entry.getKey(), entry.getValue());
+            getPlugin().getConfigManager().getConfiguration(MobBountyConfigs.ConfigurationFile.MULTIPLIERS)
+                    .set("Biome." + entry.getKey(), entry.getValue());
         }
         for (Map.Entry<String, Double> entry : M_WORLD_MULTIPLIER.entrySet()) {
-            getPlugin().getConfigManager()
-                    .setProperty(MobBountyReloadedConfFile.MULTIPLIERS, "World." + entry.getKey(), entry.getValue());
+            getPlugin().getConfigManager().getConfiguration(MobBountyConfigs.ConfigurationFile.MULTIPLIERS)
+                    .set("World." + entry.getKey(), entry.getValue());
         }
         for (Map.Entry<String, Double> entry : M_USER_MULTIPLIER.entrySet()) {
-            getPlugin().getConfigManager()
-                    .setProperty(MobBountyReloadedConfFile.MULTIPLIERS, "User." + entry.getKey(), entry.getValue());
+            getPlugin().getConfigManager().getConfiguration(MobBountyConfigs.ConfigurationFile.MULTIPLIERS)
+                    .set("User." + entry.getKey(), entry.getValue());
         }
         for (Map.Entry<String, Double> entry : M_GROUP_MULTIPLIER.entrySet()) {
-            getPlugin().getConfigManager()
-                    .setProperty(MobBountyReloadedConfFile.MULTIPLIERS, "Group." + entry.getKey(), entry.getValue());
+            getPlugin().getConfigManager().getConfiguration(MobBountyConfigs.ConfigurationFile.MULTIPLIERS)
+                    .set("Group." + entry.getKey(), entry.getValue());
         }
         for (Map.Entry<String, Double> entry : M_ENVIRONMENT_MULTIPLIER.entrySet()) {
-            getPlugin().getConfigManager()
-                    .setProperty(MobBountyReloadedConfFile.MULTIPLIERS, "Environment." + entry.getKey(),
+            getPlugin().getConfigManager().getConfiguration(MobBountyConfigs.ConfigurationFile.MULTIPLIERS)
+                    .set("Environment." + entry.getKey(),
                             entry.getValue());
         }
         for (Map.Entry<String, Double> entry : M_TIME_MULTIPLIER.entrySet()) {
-            getPlugin().getConfigManager()
-                    .setProperty(MobBountyReloadedConfFile.MULTIPLIERS, "Time." + entry.getKey(), entry.getValue());
+            getPlugin().getConfigManager().getConfiguration(MobBountyConfigs.ConfigurationFile.MULTIPLIERS)
+                    .set("Time." + entry.getKey(), entry.getValue());
         }
     }
 
@@ -272,29 +284,23 @@ public class MobBountySettings {
     }
 
     private void loadGeneralSettings() {
-        G_LOCALE = getPlugin().getConfigManager().getProperty(
-                MobBountyReloadedConfFile.GENERAL, "locale");
-        G_KILLCACHE_USE = MobBountyUtils.getBoolean(
-                getPlugin().getConfigManager().getProperty(
-                        MobBountyReloadedConfFile.GENERAL, "killCache.use"),
-                false);
-        G_KILLCACHE_TIME_LIMIT = MobBountyUtils.getInt(
-                getPlugin().getConfigManager().getProperty(
-                        MobBountyReloadedConfFile.GENERAL, "killCache.timeLimit"),
-                30000);
-        G_DEBUG = MobBountyUtils.getBoolean(getPlugin().getConfigManager()
-                .getProperty(MobBountyReloadedConfFile.GENERAL, "debugMode"),
-                false);
-        G_ALLOW_CREATIVE = MobBountyUtils.getBoolean(
-                getPlugin().getConfigManager().getProperty(
-                        MobBountyReloadedConfFile.GENERAL,
-                        "creativeEarning.allow"), false);
+        G_LOCALE = getPlugin().getConfigManager().getConfiguration(MobBountyConfigs.ConfigurationFile.GENERAL)
+                .getString("locale");
+        G_KILLCACHE_USE = getPlugin().getConfigManager().getConfiguration(MobBountyConfigs.ConfigurationFile.GENERAL)
+                .getBoolean("killCache.use");
+        G_KILLCACHE_TIME_LIMIT = getPlugin().getConfigManager()
+                .getConfiguration(MobBountyConfigs.ConfigurationFile.GENERAL)
+                .getLong("killCache.timeLimit");
+        G_DEBUG = getPlugin().getConfigManager().getConfiguration(MobBountyConfigs.ConfigurationFile.GENERAL)
+                .getBoolean("debugMode");
+        G_ALLOW_CREATIVE = getPlugin().getConfigManager().getConfiguration(MobBountyConfigs.ConfigurationFile.GENERAL)
+                .getBoolean("creativeEarning.allow");
     }
 
     private void loadKillstreakSettings() {
         KS_KILLBONUSES.clear();
-        FileConfiguration fc = getPlugin().getConfigManager()
-                .getFileConfiguration(MobBountyReloadedConfFile.KILLSTREAK);
+        FileConfiguration fc = getPlugin().getConfigManager().getConfiguration(
+                MobBountyConfigs.ConfigurationFile.KILLSTREAK);
         if (fc.isConfigurationSection("KillBonus")) {
             ConfigurationSection cs = fc.getConfigurationSection("KillBonus");
             for (String s : cs.getKeys(false)) {
@@ -302,15 +308,20 @@ public class MobBountySettings {
             }
         }
         KS_ALLOWED_CREATURES.clear();
-        KS_ALLOWED_CREATURES = getPlugin().getConfigManager().getPropertyList(
-                MobBountyReloadedConfFile.KILLSTREAK, "allowedCreatures");
+        KS_ALLOWED_CREATURES = getPlugin().getConfigManager().getConfiguration(MobBountyConfigs.ConfigurationFile
+                .KILLSTREAK).getStringList("allowedCreatures");
     }
 
     private void loadLocaleSettings() {
         L_MESSAGES.clear();
         Set<String> keys = new HashSet<String>();
-        FileConfiguration fc = getPlugin().getConfigManager().getFileConfiguration(MobBountyReloadedConfFile.LOCALE);
-        if (fc.isConfigurationSection("en")) {
+        FileConfiguration fc = getPlugin().getConfigManager().getConfiguration(
+                MobBountyConfigs.ConfigurationFile.LOCALE);
+        if (fc.isConfigurationSection(getG_LOCALE())) {
+            ConfigurationSection cs = fc.getConfigurationSection(getG_LOCALE());
+            keys = cs.getKeys(false);
+        }
+        else if (fc.isConfigurationSection("en")) {
             ConfigurationSection cs = fc.getConfigurationSection("en");
             keys = cs.getKeys(false);
         }
@@ -320,12 +331,9 @@ public class MobBountySettings {
     }
 
     private void loadMultiplierSettings() {
-        M_FORTUNE_MULTIPLIER = MobBountyUtils.getDouble(
-                getPlugin().getConfigManager().getProperty(
-                        MobBountyReloadedConfFile.MULTIPLIERS,
-                        "fortuneToolsMultiplier"), 1.0);
         FileConfiguration mfc = getPlugin().getConfigManager()
-                .getFileConfiguration(MobBountyReloadedConfFile.MULTIPLIERS);
+                .getConfiguration(MobBountyConfigs.ConfigurationFile.MULTIPLIERS);
+        M_FORTUNE_MULTIPLIER = mfc.getDouble("fortuneToolsMultiplier");
         M_ENVIRONMENT_MULTIPLIER.clear();
         M_TIME_MULTIPLIER.clear();
         M_GROUP_MULTIPLIER.clear();
@@ -374,16 +382,17 @@ public class MobBountySettings {
 
     private void loadRewardSettings() {
         R_CREATURE_VALUES.clear();
-        FileConfiguration fc = getPlugin().getConfigManager()
-                .getFileConfiguration(MobBountyReloadedConfFile.REWARDS);
+        FileConfiguration fc = getPlugin().getConfigManager().getConfiguration(
+                MobBountyConfigs.ConfigurationFile.REWARDS);
         for (String s : fc.getKeys(false)) {
             Map<String, String> map = new HashMap<String, String>();
+            if (!fc.isConfigurationSection(s)){
+                continue;
+            }
             ConfigurationSection cs = fc.getConfigurationSection(s);
             for (String s2 : cs.getKeys(false)) {
-                if (cs.isConfigurationSection(s2))
-                    continue;
+                if (cs.isConfigurationSection(s2)) { continue; }
                 map.put(s2, cs.getString(s2));
-                getPlugin().getLogger().info(s + " : " + s2 + " : " + cs.getString(s2));
             }
             R_CREATURE_VALUES.put(s, map);
         }
