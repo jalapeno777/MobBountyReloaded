@@ -2,13 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="44d882a7-e661-4dd7-aae1-f3c9b219b53d" name="Default" comment="blah">
-      <change type="DELETED" beforePath="C:\Users\Richard\IdeaProjects\MobBountyReloaded\.idea\libraries\Maven__com_conventnunnery_ConventLib_1_0_3.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_milkbowl_vault_Vault_1_2_25_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_milkbowl_vault_Vault_1_2_25_SNAPSHOT.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_bukkit_bukkit_1_5_2_R0_2_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_bukkit_bukkit_1_5_2_R0_2_SNAPSHOT.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/qaplug_profiles.xml" afterPath="$PROJECT_DIR$/.idea/qaplug_profiles.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="C:\Users\Richard\IdeaProjects\MobBountyReloaded\.idea\.name" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Richard\IdeaProjects\MobBountyReloaded\.idea\compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Richard\IdeaProjects\MobBountyReloaded\.idea\copyright\profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Richard\IdeaProjects\MobBountyReloaded\.idea\encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Richard\IdeaProjects\MobBountyReloaded\.idea\libraries\Maven__junit_junit_4_8_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Richard\IdeaProjects\MobBountyReloaded\.idea\libraries\Maven__net_milkbowl_vault_Vault_1_2_25_SNAPSHOT.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Richard\IdeaProjects\MobBountyReloaded\.idea\libraries\Maven__org_bukkit_bukkit_1_5_2_R0_2_SNAPSHOT.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Richard\IdeaProjects\MobBountyReloaded\.idea\misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Richard\IdeaProjects\MobBountyReloaded\.idea\modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Richard\IdeaProjects\MobBountyReloaded\.idea\qaplug_profiles.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Richard\IdeaProjects\MobBountyReloaded\.idea\scopes\scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Richard\IdeaProjects\MobBountyReloaded\.idea\uiDesigner.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Richard\IdeaProjects\MobBountyReloaded\.idea\vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Richard\IdeaProjects\MobBountyReloaded\.idea\workspace.xml" afterPath="" />
     </list>
     <ignored path="MobBountyReloaded.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -552,7 +559,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="780" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -569,7 +576,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24960254" sideWeight="0.670947" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32905295" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905295" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
