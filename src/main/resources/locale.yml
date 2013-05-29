@@ -1,0 +1,74 @@
+# You may use various symbols in your strings here
+# and the plugin will automatically convert them.
+#   %P - the player who killed
+#   %M - the type of mob killed
+#   %A - the reward/fine/amount
+#   %W - the world it occured in
+#   %1 - the first number in a reward range
+#   %2 - the second number in a reward range
+#   %C - command
+#   %H - help for command
+#   %D - permission
+#   %E - environment
+#   %K - kill cache amount
+#   %T - kill cache time
+#   %S - setting changed
+#   %V - value of setting
+#   %X - player killstreak value
+#   %B - biome
+en:
+  Awarded: '&2You have been awarded &F%A &2for killing a &F%M&2.'
+  CacheAwarded: '&2You have been awarded &F%A &2for killing &F%K &2mobs in &F%T &2seconds.'
+  Fined: '&4You have been fined &F%A &4for killing a &F%M&4.'
+  CacheFined: '&4You have been fined &F%A &4for killing &F%K &4mobs in &F%T &4seconds.'
+  NoAccess: '&CYou do not have access to that command.'
+  Killstreak: '&2You earned &F%A&2 for having a killstreak of &F%X&2!'
+  MBReward: '&2%M : &F%A'
+  MBRewardRange: '&2%M : &F%1 - %2'
+  MBFine: '&4%M : &F%A'
+  MBFineRange: '&4%M : &F%A - %2'
+  MBInfo: '&d%C &F- &2%H'
+  MBGChange: '&2General setting &F%S &2has been changed to &F%V&2.'
+  MBGUsage: '&CUsage: /%C [property] <amount>'
+  MBGProperty: '&7Property: locale, debug, usekillcache, killcachetimelimit, allowcreative'
+  MBRChange: '&2Default reward/fine for mob &F%M &2has been changed to &F%A&2.'
+  MBRUsage: '&CUsage: /%C [mob] <amount>'
+  MBRDeny: '&CYou cannot set for that mob.'
+  MBRMobs: '&7Mob: Creeper, Skeleton, Spider, Giant, Zombie, Slime, Ghast, PigZombie,
+    Enderman, CaveSpider, Silverfish, Blaze, LavaSlime, EnderDragon, WitherBoss, Bat,
+    Witch, Pig, Sheep, Cow, Chicken, Squid, Wolf, MushroomCow, SnowMan, Ozelot, VillagerGolem,
+    Villager'
+  MBWRChange: '&2Reward for mob &F%M &2in world &F%W &2has been changed to &F%A&2.'
+  MBWRReset: '&2Reward for mob &F%M &2in world &F%W &2has been reset to default.'
+  MBWRUsage: '&CUsage: /%C <world> <mob> [amount]'
+  MBWRWorlds: '&7World: %W'
+  MBWRMobs: '&7Mob: Creeper, Skeleton, Spider, Giant, Zombie, Slime, Ghast, PigZombie,
+    Enderman, CaveSpider, Silverfish, Blaze, LavaSlime, EnderDragon, WitherBoss, Bat,
+    Witch, Pig, Sheep, Cow, Chicken, Squid, Wolf, MushroomCow, SnowMan, Ozelot, VillagerGolem,
+    Villager'
+  MBWRDeny: '&CYou cannot set for that mob.'
+  MBEMChange: '&2Multiplier for the &F%E &2environment has been changed to &F%A&2.'
+  MBEMUsage: '&CUsage: /%C <environment> [amount]'
+  MBEMEnvs: '&7Environment: NORMAL, NETHER, THE_END'
+  MBBMChange: '&2Multiplier for the &F%B &2biome has been changed to &F%A&2.'
+  MBBMUsage: '&CUsage: /%C <biome> [amount]'
+  MBBMBiomes: '&7Biomes: SWAMPLAND, FOREST, TAIGA, DESERT, PLAINS, HELL, SKY, OCEAN,
+    RIVER, EXTREME_HILLS, FROZEN_OCEAN, FROZEN_RIVER, ICE_PLAINS, ICE_MOUNTAINS, MUSHROOM_ISLAND,
+    MUSHROOM_SHORE, BEACH, DESERT_HILLS, FOREST_HILLS, TAIGA_HILLS, SMALL_MOUNTAINS,
+    JUNGLE, JUNGLE_HILLS'
+  MBTMChange: '&2Multiplier during the &F%T &2has been changed to &F%A&2.'
+  MBTMUsage: '&CUsage: /%C <time> [amount]'
+  MBTMTimes: '&7Time: Day, Sunset, Night, Sunrise'
+  MBWMChange: '&2Multiplier for world &F%W &2has been changed to &F%A&2.'
+  MBWMUsage: '&CUsage: /%C <world> [amount]'
+  MBWMWorlds: '&7World: %W'
+  MBGMChange: '&2Multiplier for group &F%W &2has been changed to &F%A&2.'
+  MBGMUsage: '&CUsage: /%C <group> [amount]'
+  MBUMChange: '&2Multiplier for user &F%P &2has been changed to &F%A&2.'
+  MBUMUsage: '&CUsage: /%C <player> <amount>'
+  MBSSaved: '&2MobBountyReloaded config has been saved.'
+  MBLLoaded: '&2MobBountyReloaded config has been loaded.'
+  DebugHasPermission: '&F%P &2has permission: &F%D'
+  DebugLacksPermission: '&F%P &4lacks permission: &F%D'
+  DebugGeneral: '%M'
+version: 1.0
