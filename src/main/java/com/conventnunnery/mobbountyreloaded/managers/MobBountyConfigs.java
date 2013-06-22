@@ -19,8 +19,8 @@
 
 package com.conventnunnery.mobbountyreloaded.managers;
 
+import com.conventnunnery.libraries.config.ConventYamlConfiguration;
 import com.conventnunnery.mobbountyreloaded.MobBountyReloaded;
-import com.conventnunnery.plugins.conventlib.configuration.ConventYamlConfiguration;
 import org.bukkit.World;
 import org.bukkit.block.Biome;
 import org.bukkit.configuration.file.YamlConfiguration;

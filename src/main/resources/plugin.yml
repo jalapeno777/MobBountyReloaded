@@ -1,7 +1,7 @@
 main: com.conventnunnery.mobbountyreloaded.MobBountyReloaded
-version: ${project.version}-${BUILD_NUMBER}
+version: ${project.build.version}
 author: ToppleTheNun
-name: MobBountyReloaded
+name: ${project.build.name}
 
 permissions:
     mbr.user.collect:

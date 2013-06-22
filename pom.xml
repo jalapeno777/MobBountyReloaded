@@ -173,6 +173,7 @@
                             <artifactSet>
                                 <includes>
                                     <include>com.conventnunnery:ConventLib</include>
+                                    <include>com.conventnunnery:ExtendibleBukkitConfig</include>
                                 </includes>
                             </artifactSet>
                         </configuration>
@@ -218,7 +219,14 @@
         <dependency>
             <groupId>com.conventnunnery</groupId>
             <artifactId>ConventLib</artifactId>
-            <version>1.0.7</version>
+            <version>1.0.9</version>
+            <type>jar</type>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.conventnunnery</groupId>
+            <artifactId>ExtendibleBukkitConfig</artifactId>
+            <version>1.0.0</version>
             <type>jar</type>
             <scope>compile</scope>
         </dependency>
@@ -269,5 +277,34 @@
     </reporting>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.build.number>UNKNOWN</project.build.number>
+        <project.build.version>UNKNOWN</project.build.version>
+        <project.build.name>UNKNOWN</project.build.name>
     </properties>
+    <profiles>
+        <profile>
+            <id>jenkins</id>
+            <activation>
+                <property>
+                    <name>env.BUILD_NUMBER</name>
+                </property>
+            </activation>
+            <properties>
+                <project.build.number>${env.BUILD_NUMBER}</project.build.number>
+                <project.build.version>${project.version}-b${project.build.number}</project.build.version>
+                <project.build.name>${env.JOB_NAME}</project.build.name>
+            </properties>
+        </profile>
+        <profile>
+            <id>default</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <project.build.number>0</project.build.number>
+                <project.build.version>${project.version}-b${project.build.number}</project.build.version>
+                <project.build.name>${project.artifactId}</project.build.name>
+            </properties>
+        </profile>
+    </profiles>
 </project>
