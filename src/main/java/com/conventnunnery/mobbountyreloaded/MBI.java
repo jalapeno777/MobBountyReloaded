@@ -10,15 +10,17 @@
 
 package com.conventnunnery.mobbountyreloaded;
 
-import com.conventnunnery.mobbountyreloaded.utils.MobBountyTime;
-import com.conventnunnery.mobbountyreloaded.utils.MobBountyUtils;
+import java.util.Map;
+
 import org.bukkit.World.Environment;
 import org.bukkit.block.Biome;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 
-import java.util.Map;
+import com.conventnunnery.mobbountyreloaded.MobBountyReloaded;
+import com.conventnunnery.mobbountyreloaded.utils.MobBountyTime;
+import com.conventnunnery.mobbountyreloaded.utils.MobBountyUtils;
 
 public class MBI {
 
@@ -31,8 +33,8 @@ public class MBI {
 	public double getBiomeMult(Player player) {
 		Biome biome = player.getLocation().getBlock().getBiome();
 		Double biomeMult;
-		biomeMult = getMBR().getSettingsManager().getM_BIOME_MULTIPLIER().get(biome
-				.name().toUpperCase());
+		biomeMult = getMBR().getSettingsManager().getM_BIOME_MULTIPLIER()
+				.get(biome.name().toUpperCase());
 		if (biomeMult == null) {
 			biomeMult = 1.0;
 		}
@@ -41,8 +43,8 @@ public class MBI {
 
 	public double getEnvironmentMult(Player player) {
 		Environment env = player.getWorld().getEnvironment();
-		Double envMult = getMBR().getSettingsManager().getM_ENVIRONMENT_MULTIPLIER()
-				.get(env.name().toUpperCase());
+		Double envMult = getMBR().getSettingsManager()
+				.getM_ENVIRONMENT_MULTIPLIER().get(env.name().toUpperCase());
 		if (envMult == null)
 			envMult = 1.0;
 		return envMult;
@@ -67,9 +69,12 @@ public class MBI {
 		}
 		String key = getMBR().getPermissionManager().getPermissions()
 				.getPrimaryGroup(player).toUpperCase();
-		if (!getMBR().getSettingsManager().getM_GROUP_MULTIPLIER().containsKey(key))
+		if (!getMBR().getSettingsManager().getM_GROUP_MULTIPLIER()
+				.containsKey(key))
 			return 1.0;
-		groupMult = getMBR().getSettingsManager().getM_GROUP_MULTIPLIER()
+		groupMult = getMBR()
+				.getSettingsManager()
+				.getM_GROUP_MULTIPLIER()
 				.get(getMBR().getPermissionManager().getPermissions()
 						.getPrimaryGroup(player).toUpperCase());
 		return groupMult;
@@ -86,7 +91,8 @@ public class MBI {
 	public double getTimeMult(Player player) {
 		MobBountyTime time = MobBountyTime.getTimeOfDay(player.getWorld()
 				.getTime());
-		if (!getMBR().getSettingsManager().getM_TIME_MULTIPLIER().containsKey(time.name().toUpperCase())) {
+		if (!getMBR().getSettingsManager().getM_TIME_MULTIPLIER()
+				.containsKey(time.name().toUpperCase())) {
 			return 1.0;
 		}
 		Double timeMult = getMBR().getSettingsManager().getM_TIME_MULTIPLIER()
@@ -98,7 +104,8 @@ public class MBI {
 	}
 
 	public double getUserMult(Player player) {
-		if (!getMBR().getSettingsManager().getM_USER_MULTIPLIER().containsKey(player.getName().toUpperCase()))
+		if (!getMBR().getSettingsManager().getM_USER_MULTIPLIER()
+				.containsKey(player.getName().toUpperCase()))
 			return 1.0;
 		return getMBR().getSettingsManager().getM_USER_MULTIPLIER()
 				.get(player.getName().toUpperCase());
@@ -106,8 +113,8 @@ public class MBI {
 
 	public double getValue(LivingEntity entity) {
 		String wn = entity.getWorld().getName();
-		Map<String, String> map = getMBR().getSettingsManager().getR_CREATURE_VALUES()
-				.get(wn);
+		Map<String, String> map = getMBR().getSettingsManager()
+				.getR_CREATURE_VALUES().get(wn);
 		if (map == null) {
 			map = getMBR().getSettingsManager().getR_CREATURE_VALUES()
 					.get("Default");
@@ -131,8 +138,8 @@ public class MBI {
 	}
 
 	public double getWorldMult(Player player) {
-		Double worldMult = getMBR().getSettingsManager().getM_WORLD_MULTIPLIER()
-				.get(player.getWorld().getName());
+		Double worldMult = getMBR().getSettingsManager()
+				.getM_WORLD_MULTIPLIER().get(player.getWorld().getName());
 		if (worldMult == null)
 			worldMult = 1.0;
 		return worldMult;
